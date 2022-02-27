@@ -4,8 +4,8 @@ with open("README.md", "r", encoding="utf-8") as fh:
     long_description = fh.read()
 
 setuptools.setup(
-    name='Topsis-Paryagdeep-101903573',
-    version="0.0.2",
+    name='Topsis_Paryagdeep_101903573',
+    version="0.0.3",
     author='Paryagdeep Singh',
     author_email='psingh4_be19@thapar.edu',
     description='TOPSIS is a method of compensatory aggregation that compares a set of alternatives by identifying '
@@ -20,8 +20,13 @@ setuptools.setup(
         "License :: OSI Approved :: MIT License",
         "Operating System :: OS Independent",
     ],
-    install_requires=['pandas'],
+    install_requires=['pandas', 'openpyxl'],
     keywords=['TOPSIS', 'PANDAS', 'AGGREGATION'],
-    packages=setuptools.find_packages(where="Topsis-Paryagdeep-101903573"),
+    package_dir={"": "src"},
+    packages=['Topsis_Paryagdeep_101903573'],
+    include_package_data=True,
     python_requires=">=3.10",
+    entry_points={
+        "console_scripts": ["Topsis-Paryagdeep-101903573 = Topsis_Paryagdeep_101903573.topsis_Paryagdeep:main"]
+    },
 )
